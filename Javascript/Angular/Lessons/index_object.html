@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <!--
+            data-ng-init is not very common, will learn better in later lessons -->
+        <div data-ng-app = "" data-ng-init = "person = { firstName:'Yudhvir', lastName:'Raj' }">
+            <p>{{ person.firstName + " " + person.lastName }}</p>
+            <p> FirstName : <span data-ng-bind = "person.firstName"></span></p>
+            <p> LastName  : <span data-ng-bind = "person.lastName"></span></p>
+        <div>
+    </body>
+</html>

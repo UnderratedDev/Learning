@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <!--
+            The ng-app directive defines an AngularJS application.
+
+            The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+            The ng-bind directive binds application data to the HTML view.
+
+            The ng-app directive tells AngularJS that the <div> element is the "owner" of an AngularJS application.
+
+            The ng-model directive binds the value of the input field to the application variable name.
+
+            The ng-bind directive binds the innerHTML of the <p> element to the application variable name.
+
+            You can use data-ng-, instead of ng-, if you want to make your page HTML valid. -->
+        <div data-ng-app = "" data-ng-init = "name='Yudhvir'">
+            <p>Name : <input type = "text" data-ng-model = "name" /></p>
+            <p>My first expresssion : {{5 + 5}}</p>
+            <h1>Hello {{name}}</h1>
+        <div>
+    </body>
+</html>

@@ -1,6 +1,6 @@
 ****Learning Topics****
     - Courses :
-        i Udemy
+        i. Udemy
     - Adaptive Programming :
         i.   Neural Networks
         ii.  AI
