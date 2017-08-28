@@ -1,0 +1,14 @@
+****Learning Topics****
+    - Courses :
+        i Udemy
+    - Adaptive Programming :
+        i.   Neural Networks
+        ii.  AI
+        iii. Machine Learning
+    - Cross Platform :
+        i.  Xamarin
+        ii. React-Native
+    - Javascript :
+        i.   Angular JS
+        ii.  React JS
+        iii. Node JS
