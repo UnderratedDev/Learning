@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <div data-ng-app = "myApp" data-ng-controller = "myCtrl">
+            {{ firstName + " " + lastName }}
+        </div>
+        <!--
+            While it is common in HTML applications to place scripts at the end of the <body> element, it is recommended that you load the AngularJS library either in the <head> or at the start of the <body>.
+
+            This is because calls to angular.module can only be compiled after the library has been loaded. -->
+        <script src = "./scripts/myApp.js"></script>
+        <script src = "./scripts/myCtrl.js"></script>
+    </body>
+</html>
