@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <!--
+            The ng-app directive also tells AngularJS that the <div> element is the "owner" of the AngularJS application.
+            The {{ firstName }} expression, in the example above, is an AngularJS data binding expression.
+
+            Data binding in AngularJS binds AngularJS expressions with AngularJS data.
+
+            {{ firstName }} is bound with ng-model="firstName.
+            AngularJS is perfect for database CRUD (Create Read Update Delete) applications.
+            Just imagine if these objects were records from a database. -->
+
+        <!--
+            The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+            The ng-model directive can also:
+
+            Provide type validation for application data (number, email, required).
+            Provide status for application data (invalid, dirty, touched, error).
+            Provide CSS classes for HTML elements.
+            Bind HTML elements to HTML forms -->
+        <div data-ng-app = "" data-ng-init = "names = [ {name : 'Yudhvir', country : 'England'}, {name : 'Andrew', country : 'Canada'}, {name : 'Esa', country : 'Canada'} ]">
+            <ul>
+                <li data-ng-repeat = "x in names">
+                    {{ x.name + ', ' + x.country  }}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

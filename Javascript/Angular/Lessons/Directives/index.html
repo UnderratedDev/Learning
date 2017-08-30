@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body>
+        <!--
+            The ng-app directive also tells AngularJS that the <div> element is the "owner" of the AngularJS application.
+            The {{ firstName }} expression, in the example above, is an AngularJS data binding expression.
+
+            Data binding in AngularJS binds AngularJS expressions with AngularJS data.
+
+            {{ firstName }} is bound with ng-model="firstName. -->
+        <div data-ng-app = "" data-ng-init = "firstName : 'Yudhvir'">
+            <p>Name : <input type = "text" data-ng-model = "firstName"></p>
+            <p> You wrote : {{ firstName }} </p>
+        </div>
+    </body>
+</html>
