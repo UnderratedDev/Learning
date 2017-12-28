@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "crash-course",
+    "description": "This project is really great.",
+    "slug": "crash-course",
+    "privacy": "public",
+    "sdkVersion": "24.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

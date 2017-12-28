@@ -1,0 +1,243 @@
+General
+5 + 6
+3 - 2
+5 * 8
+1 / 2
+2^6
+1 == 2 % false // % is for comment, result is 0
+1 ~= 2 % true  // not bang = (!=)
+1 && 0 % AND
+1 || 0 % OR
+
+xor (1, 0) % XOR
+PS1('>> '); % To change prompt text in console
+
+a = 3 % prints a = 3
+a = 3; % semicolon supressing output
+b = 'hi';
+c = (3 >= 1);
+a = prints
+a % will print out a
+disp (a); % will print out a
+disp(sprintf('2 decimals: %0.2f', a)) % old style, c sytnax
+disp(sprintf('6 decimals: %0.6f', a)) % 6 decimal places
+format long  % long decimal places
+format short % default decimal places
+
+A = [1 2; 3 4; 5 6] % ; means next line, seperates rows
+v = [1 2 3] % vector 1 * 3, row vector
+v = [1; 2; 3] % vector 3 * 1 column vector
+v = 1:0.1:2 % from 1 to 2, increment by 0.1 and put in matrix in columns
+v = 1:6 % row vector, from 1 to 6
+ones(2, 3) % 2 * 3 matrix of ones
+zeros(1, 3) % 1 * 3 matrix of zeros
+w = rand(1, 3) % 1 * 3 matrix of randoms, uniform distribution between zero and ones
+w = randn(1, 3) % gaussian random variable or normal random variable, mean 0, and variance or standard deviation equal to one.
+w = -6 + sqrt(10) * (randn(1, 10000));  % -6 will be the mean
+hist(w) % draws a histogram
+hist(w, 50) % 50, more buckets
+I = eye(4) % 4 * 4 identity matrix
+help eye % help for eye function
+
+Data loading/saving/movement
+A = [1 2; 3 4; 5 6]
+size (A) % returns a matrix of the size, 3 2
+size (A, 1) % size of first dimension of AND
+size (A, 2) % number of columns
+V = [1 2 3 4]
+length (v) % size of the longest dimension, returns 4
+length (A) % 3 * 2, returns 3 as 3 is the longest dimension
+
+load nameoffile.dat
+load ('nameoffile.dat')
+who % shows what variables you have in your workspace (currently in octave memory)
+whos % detailed view of who, attr, name, sizes, bytes, and class
+clear variablename % removes variable from memory
+v = priceY (1:10) % first ten elements, 10 * 1
+save filename.mat v; % saves variable v into file called filename.mat, in binary format
+clear % removes all variables in workspace
+load filename.mat
+save filename.txt v -ascii % save as text (ASCII)
+A = [1 2; 3 4; 5 6]
+A(3, 2) % returns 6, indexing
+A(2, :) % ":" means every element along that row/column, returns 3 4
+A(:, 2) % returns 2 4 6 in column vector
+A([1 3], :) returns all elements in first and third row of A
+A(:, 2) = [10; 11; 12] % assigns second column to 10 11 12
+A = [A, [100; 101; 102]] % append another column vector to the right
+A(:) % put all elements of A into a single vector
+A = [1 2; 3 4; 5 6]
+B = [11 12; 13 14; 15 16]
+C = [A B]
+C = [A; B] % Puts B on bottom of A matrix instead of to the right, ; means go to the next line, or A, B
+
+Computing on data
+A = [1 2; 3 4; 5 6]
+B = [11 12; 13 14; 15 16]
+C = [1 1; 2 2]
+A * C % multiplies A and C
+A .* B % element wise multiplication, . is generally used to denote element-wise operations in octave
+A .^ 2 % element wise square
+1 ./ v % element wise reciprocal/inverse
+1 ./ A
+log(v) % element wise log
+exp(v) % element wise exp, so e^element, e^1, e^2, e^n
+abs(v) % element wise absolute
+-v % negative element wise, same as -1 * v
+v + ones(length(v), 1) % increment each value in vector
+v + 1 % element wise increment
+A' % Transpose
+(A')' % Transpose of Transpose is original matrix
+val = max(a) % gives max element in a
+[val, inx] = max(a) % returns max value and index in a
+a < 3 % element wise comparison, returns matrix of 1's and 0's defining true or false for logical operation
+find(a < 3) % find elements less than 3
+A = magic(3) % returns magic squares, mathematical property, rows, columns, and diagonals add up to the same values
+[r, c] = find(A >= 7) % r and c, returns r and c vectors
+A(2, 3) % row 2 and column 3
+sum(a) % adds up all the elements of a
+prod(a) % multiplies all the elements of a
+floor(a) % rounds down all the elements of a
+ceil(a) % rounds up all the elements of a
+rand(3) % generates a 3 * 3 matrix
+max(rand(3), rand(3)) % gets max value of each elements in both those matricies
+max(a, [], 1) % column-wise maximum, 1 means first dimension of a
+max(a, [], 2) % row-wise maximum
+max(a) % defaults to column wise
+max(max(A)) % to get max value
+max(A(:)) % to get max value (generates vector)
+A = magic(9)
+sum(A, 1) % per column sum
+sum(A, 2) % per row sum
+eye (9) % identity matrix of size 9
+A .* eye (9) % element wise multiplication, allows to remove all but diagonal values
+sum(sum(A.*eye(9)))
+sum(sum(A.*flipup(eye(9)))) % other diagonal sum
+flipud(eye(9)) % flips up down
+flipup(eye(9)) % flips up
+pinv(A) % inverse of A
+temp = pinv(A)
+temp * A % identity matrix as inverse * original = identity matrix
+
+Plotting data
+t=[0:0.01:0.98]
+y1 = sin(2*pi*4*t);
+plot(t, y1) % plots graph, t is horizontal axis, y1 is vertical axis
+y2 = cos(2*pi*4*t);
+plot(t,y2);
+plot(t,y1);
+hold on; % plot new figures on top of old ones
+plot(t,y2,'r'); % r indicates red color
+xlabel('time')
+ylabel('value') 
+legend('sin', 'cos')
+title('my plot')
+print -dpng 'myPlot.png'
+close % closes the figure
+figure(1); plot(t, y1); % opens one figure image
+figure(2); plot(t, y2); % opens second figure image
+subplot(1, 2, 1); % Divides plot a 1x2 grid, access first element
+plot(t, y1);
+subplot(1,2,2);
+plot(t,y2);
+axis([0.5 1 -1 1]) % changes axis sizes
+clf; % clears a figure
+A = magic(5)
+imagesc(A) % plot a 5 * 5 matrix, plots as a grid of colors corresponding to the matrix
+imagesc(A), colorbar, colormap gray; % colormap is gray, and colorbar (legend) adds, shows what the colors correspond to
+a = 1, b = 2, c = 3 % comman chaining
+
+Control flow
+v=zeros(10, 1)
+for i=10:10, % for loop
+    v(i) = 2^i; % execution statement
+end;
+v
+indices=1:10;
+for i=indices,
+    disp(i);
+ end;
+
+i = 1;
+while i <= 5, % while loop
+    v(i) = 100; % while execution body
+    i = i+1;
+end;
+
+while true,
+    v(i) = 999;
+    i = 1+1;
+    if i == 6,
+        break,
+    end; % end the if statement
+end; % end the while body
+
+v(1) = 2;
+if v(1)==1,
+    disp('The value is one');
+elseif v(1) == 2,
+    disp('The value is two');
+else
+    disp('The value is not one or two.');
+end;
+exit % exit octave
+quit $ quit octave
+
+to create function, create a file, add code, and then name it with the extension .m
+
+squareThisNumber.m
+
+function y = squareThisNumber(x)
+
+y = x^2;
+
+squareThisNumber(5) % will not work as octave does not know where to find this file
+% go to right directory
+squareThisNumber(5) % returns 25
+% Octave search path (advanced/optional)
+addpath('path') % will search for .m files in this path
+
+
+% can return multiple values :o
+squareAndCubeThisNumber.m
+
+function [y1, y2] = squareAndCubeThisNumber(x)
+
+y1 = x^2;
+y2 = x^3;
+
+[a, b] = squareAndCubeThisNumber(5);
+a % prints 25
+b % prints 125
+
+************************************************************************************************************************************
+*Graph*, x and y, points [(1, 1), (2, 2), (3, 3)]
+
+Goal: Define a function to compute the cost function J(Theta).
+
+%first put the data into octave
+X = [1 1; 1 2; 1 3]
+y = [1; 2; 3]
+theta = [0;1]
+
+costFunctionJ.m
+
+function J = costFunctionJ(X, y, theta)
+
+% X is the "design matrix" containing our training examples.
+% y is the class labels
+
+m = size(X, 1);        % number of training examples
+predictions = X*theta; % predictions of hypothesis on all m examples
+sqrErrors = (predictions-y).^2; % squared errors
+
+
+J = 1/(2*m) * sum(sqrErrors);
+
+**Octave**
+j = costFucntionJ(X, y, theta) % prints j = 0
+theta = [0:0]
+j = costFunctionJ(X, y, theta) % prints j = 2.3333
+(1^2 + 2^2 + 3^2)/ (2*3) % returns ans = 2.3333, works
+************************************************************************************************************************************
+Numerical Computing // Read it up
