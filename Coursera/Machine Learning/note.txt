@@ -1,0 +1,6 @@
+Conjugate gradient
+BFGS
+L-BFGS
+// Do not implement these algorithms yourself unless you are an expert in numerical computing. Recomended to use a software library. Octave has a pretty reasonable library for this.
+
+// Using a programming language, use a couple of libraries and use the fastest one.
