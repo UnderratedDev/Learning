@@ -1,0 +1,9 @@
+Machine Learning
+Calculus
+Advanced Linear Algebra
+F#
+Go
+React-Native
+SIMD
+Numerical Computation
+Convexity Analysis
