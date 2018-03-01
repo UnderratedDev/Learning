@@ -22,6 +22,12 @@ pts = np.array([[10, 5], [20, 30], [70, 20], [50, 10]], np.int32)
 # true specifys if we want to connect the final point to the first point
 cv2.polylines (img, [pts], True, (0, 255, 255), 3)
 
+font = cv2.FONT_HERSHEY_SIMPLEX
+
+# text to show, where to start text, font to use, size, color, thickness of letters, anti-aliasing
+# can use decimals for font size
+cv2.putText (img, 'OpenCV tuts!', (0, 130), font, 1, (200, 255, 255), 2, cv2.LINE_AA)
+
 cv2.imshow ('image', img)
 
 cv2.waitKey (0)
